@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getDeclineNumber } from '../utils';
+import { getDeclineNumber } from './utils/getDeclineNumber';
 import { getFinalWordDecline1 } from './utils/getFinalWordDecline1';
 import { getFinalWordDecline2 } from './utils/getFinalWordDecline2';
 import { getFinalWordDecline3 } from './utils/getFinalWordDecline3';
@@ -7,7 +7,7 @@ import { Gender } from './Gender';
 import { Enter } from './Enter';
 import '../App.css';
 
-function Form() {
+export function Form() {
   const [initialWord, setInitialWord] = useState('');
   const [casus, setCasus] = useState('0');
   const [finalWord, setFinalWord] = useState('');
@@ -16,16 +16,24 @@ function Form() {
 
   const onSubmitFormHandler = (initialWord, declineNumber, casus, evt) => {
     evt.preventDefault();
+
     setDeclineNumber(getDeclineNumber(initialWord));
+    setFinalWord(getFinalWordDecline1(initialWord, declineNumber, casus, gender, evt));
 
     if (declineNumber === 1) {
-      setFinalWord(getFinalWordDecline1(initialWord, declineNumber, casus, gender, evt)); 
+      setFinalWord(getFinalWordDecline1(initialWord, casus, gender, evt)); 
     } else if (declineNumber === 2) {
-      setFinalWord(getFinalWordDecline2(initialWord, declineNumber, casus, gender, evt)); 
+      setFinalWord(getFinalWordDecline2(initialWord, casus, gender, evt)); 
     } else if (declineNumber === 3) {
-      setFinalWord(getFinalWordDecline3(initialWord, declineNumber, casus, gender, evt)); 
+      setFinalWord(getFinalWordDecline3(initialWord, casus, gender, evt)); 
     } else if (declineNumber === 23 && gender === "male") {
-      setFinalWord(getFinalWordDecline2(initialWord, declineNumber, casus, gender, evt));
+      setFinalWord(getFinalWordDecline2(initialWord, casus, gender, evt));
+    } else if (declineNumber === 23 && gender === "female") {
+      setFinalWord(getFinalWordDecline3(initialWord, casus, gender, evt));
+    } else if (declineNumber === 4) {
+      setFinalWord(initialWord);
+    } else if (declineNumber === 5) {
+      setFinalWord('Недопустимое слово');
     }
   }
 
@@ -77,5 +85,3 @@ function Form() {
     </div>
   );
 }
-
-export { Form };

@@ -1,4 +1,4 @@
-const getFinalWordDecline1 = (initialWord, declineNumber, casus) => {
+const getFinalWordDecline1 = (initialWord, casus) => {
   const lastSymbol = initialWord.slice(-1);
   let suffixes = ['', '', '', '', '', ''];
 

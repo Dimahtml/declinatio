@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function Gender({ onRadioChangeHandler, gender }) {
+export function Gender({ onRadioChangeHandler, gender }) {
 
   return (
     <section className="gender">
@@ -30,5 +30,3 @@ function Gender({ onRadioChangeHandler, gender }) {
     </section>
   );
 }
-
-export { Gender };

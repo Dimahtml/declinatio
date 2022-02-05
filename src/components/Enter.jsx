@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Enter({ initialWord, casus, onInputChangeHandler, onSelectChangeHandler }) {
+export function Enter({ initialWord, casus, onInputChangeHandler, onSelectChangeHandler }) {
 
   return (
     <section className="enter">
@@ -28,5 +28,3 @@ function Enter({ initialWord, casus, onInputChangeHandler, onSelectChangeHandler
     </section>
   );
 }
-
-export { Enter };
