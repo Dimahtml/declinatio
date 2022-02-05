@@ -25,7 +25,7 @@ const getFinalWordDecline2 = (initialWord, casus) => {
 
   } else if (regex2.test(initialWord)) {
     suffixes = ['', 'а', 'у', '', 'ом', 'е'];
-
+    return initialWord + suffixes[casus];
   } else if (regex3.test(initialWord)) {
     suffixes = ['о', 'а', 'у', 'о', 'ом', 'е'];
     return initialWord.slice(0, -1) + suffixes[casus];

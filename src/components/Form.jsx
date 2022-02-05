@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { getDeclineNumber } from './utils/getDeclineNumber';
-import { getFinalWordDecline1 } from './utils/getFinalWordDecline1';
-import { getFinalWordDecline2 } from './utils/getFinalWordDecline2';
-import { getFinalWordDecline3 } from './utils/getFinalWordDecline3';
+
+import { getDeclineNumber } from '../utils/getDeclineNumber';
+import { getFinalWordDecline1 } from '../utils/getFinalWordDecline1';
+import { getFinalWordDecline2 } from '../utils/getFinalWordDecline2';
+import { getFinalWordDecline3 } from '../utils/getFinalWordDecline3';
 import { Gender } from './Gender';
 import { Enter } from './Enter';
 import '../App.css';
