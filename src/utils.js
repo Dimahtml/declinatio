@@ -2,16 +2,17 @@ const SECOND_DECLENSION_WORDS = ['гвоздь', 'голубь', 'дождь', '
 
 
 export const getDeclensionNumber = (word) => {
-  // const regexDeclension1 = /а$|я$/;
   const regexDeclension1 = /[а,я]$/;
-  // const regexDeclension2 = /б$|в$|г$|д$|ж$|з$|к$|л$|м$|н$|о$|п$|р$|с$|т$|ф$|х|$арь$|тель$/;
-  const regexDeclension2 = /[б,в,г,д,ж,з,к,л,м,н,о,п,р,с,т,ф,х,арь,тель]$/;
-  const regexDeclension3 = /чь$|шь$|щь$|ость$|бь$|вь$|дь$|зь$|сь$|ть|жь$/;
+  const regexDeclension2 = /[б,в,г,д,ж,з,к,л,м,н,о,п,р,с,т,ф,х]$|$арь$|тель$/;
+  const regexDeclension3 = /чь$|шь$|щь$|ость$|бь$|вь$|дь$|зь$|сь$|ть$|жь$|рь$/;
   const regexDeclension4 = /у$/;
 
-  if (regexDeclension1.test(word) || regexDeclension1.test(word)) {
+  if (regexDeclension1.test(word)) {
     return 1;
   } else if (regexDeclension2.test(word) || SECOND_DECLENSION_WORDS.includes(word)) {
+    console.log(regexDeclension1.test(word));
+    console.log(regexDeclension2.test(word));
+    console.log(regexDeclension3.test(word));
     return 2;
   } else if (regexDeclension3.test(word)) {
     return 3;
@@ -32,6 +33,7 @@ export const getFinalWord = (initialWord, declensionNumber, casus, evt) => {
   const initialTwoLastSymbols = initialWord.slice(-2);
 
   if (declensionNumber === 1) {
+    console.log(11111111111);
     if (initialTwoLastSymbols === 'га' || initialTwoLastSymbols === 'ка') {
       suffixes = [initialLastSymbol, 'и', 'е', 'у', 'ой', 'е'];
     } else if (initialTwoLastSymbols === 'ша' || initialTwoLastSymbols === 'жа') {
@@ -47,6 +49,7 @@ export const getFinalWord = (initialWord, declensionNumber, casus, evt) => {
   }
 
   if (declensionNumber === 2) {
+    console.log(22222222222);
     const regex = /б$|в$|г$|д$|ж$|з$|к$|н$|п$|р$|т$|ф$/;
     const regex2 = /л$|м$|с$|х$/;
     const regex3 = /о$/;
@@ -64,6 +67,7 @@ export const getFinalWord = (initialWord, declensionNumber, casus, evt) => {
   }
 
   if (declensionNumber === 3) {
+    console.log(33333333);
     suffixes = [initialLastSymbol, 'и', 'и', 'ь', 'ью', 'и'];
     return initialWord.slice(0, -1) + suffixes[casus];
   }

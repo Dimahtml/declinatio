@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-fieldset {
+  margin: 100px auto;
+  padding: 30px;
+  width: 400px;
+  border: 3px solid teal;
+  font-size: 1.4rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-input {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.main-select {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.submit-button {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.casus-subtitle {
+  margin-top: 4rem;
+}
+
+.answer-subtitle {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.answer-header {
+  align-self: center;
+}
+
+.gender {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.gender__label {
+  margin-top: 1rem;
+}
+
+.gender__input {
+  margin-right: 10px;
+}
