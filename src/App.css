@@ -8,9 +8,11 @@
   margin: 100px auto;
   padding: 30px;
   width: 400px;
-  border: 3px solid teal;
+  border: 6px solid teal;
+  border-radius: 12px;
   font-size: 1.4rem;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(29, 105, 105, 0.123)
 }
 
 .main-form {
@@ -19,42 +21,52 @@
   justify-content: center;
 }
 
-.main-input {
-  margin-top: 2rem;
-  font-size: 1.5rem;
-}
-
-.main-select {
-  margin-top: 2rem;
-  font-size: 1.5rem;
+.main-input,
+.main-select,
+.submit-button,
+.answer-subtitle {
+  margin-top: 1.6em;
+  font-size: 0.8em;
 }
 
 .submit-button {
-  margin-top: 2rem;
-  font-size: 1.5rem;
+  color: #FFFFFF;
+  background-color: teal;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: rgba(0, 128, 128, 0.808);
+}
+
+.submit-button:active {
+  background-color: rgb(1, 104, 104);
 }
 
 .casus-subtitle {
-  margin-top: 4rem;
-}
-
-.answer-subtitle {
-  margin-top: 2rem;
-  font-size: 1.5rem;
+  margin-top: 3em;
 }
 
 .answer-header {
   align-self: center;
+  display: block;
+  width: 100%;
+  min-height: 1.5em;
+  border-bottom: 2px solid teal;
+  text-align: center;
 }
 
 .gender {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 2em;
 }
 
 .gender__label {
-  margin-top: 1rem;
+  margin-top: 1em;
 }
 
 .gender__input {
