@@ -19,18 +19,18 @@ export function Form() {
     evt.preventDefault();
 
     setDeclineNumber(getDeclineNumber(initialWord));
-    setFinalWord(getFinalWordDecline1(initialWord, declineNumber, casus, gender, evt));
+    setFinalWord(getFinalWordDecline1(initialWord, casus));
 
     if (declineNumber === 1) {
-      setFinalWord(getFinalWordDecline1(initialWord, casus, gender, evt)); 
+      setFinalWord(getFinalWordDecline1(initialWord, casus)); 
     } else if (declineNumber === 2) {
-      setFinalWord(getFinalWordDecline2(initialWord, casus, gender, evt)); 
+      setFinalWord(getFinalWordDecline2(initialWord, casus)); 
     } else if (declineNumber === 3) {
-      setFinalWord(getFinalWordDecline3(initialWord, casus, gender, evt)); 
+      setFinalWord(getFinalWordDecline3(initialWord, casus)); 
     } else if (declineNumber === 23 && gender === "male") {
-      setFinalWord(getFinalWordDecline2(initialWord, casus, gender, evt));
+      setFinalWord(getFinalWordDecline2(initialWord, casus));
     } else if (declineNumber === 23 && gender === "female") {
-      setFinalWord(getFinalWordDecline3(initialWord, casus, gender, evt));
+      setFinalWord(getFinalWordDecline3(initialWord, casus));
     } else if (declineNumber === 4) {
       setFinalWord(initialWord);
     } else if (declineNumber === 5) {
